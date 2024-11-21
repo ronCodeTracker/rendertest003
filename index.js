@@ -11,7 +11,7 @@ app.use(express.json());
 const connection = mysql.createConnection({
     host: '198.12.235.32' , // Replace with your remote server address
     user: "Ronn", // Replace with your database username
-    password: process.env.PASSWORD, // Replace with your database password
+    password: "Brnh77?7gogo", // Replace with your database password
     database: "Valacyclovir Med Chart" // Replace with your database name
     //port: process.env.DB_PORT || 3306 // Add this line if your MySQL server uses a non-default port
 });
