@@ -6,14 +6,13 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
-
 // MySQL connection
 const connection = mysql.createConnection({
-    host: '198.12.235.32' , // Replace with your remote server address
-    user: "Ronn", // Replace with your database username
-    password: "Brnh77?7gogo", // Replace with your database password
-    database: "Valacyclovir Med Chart" // Replace with your database name
-    //port: process.env.DB_PORT || 3306 // Add this line if your MySQL server uses a non-default port
+    host: process.env.DB_HOST, // Replace with your remote server address
+    user: process.env.DB_USER, // Replace with your database username
+    password: process.env.DB_PASSWORD, // Replace with your database password
+    database: process.env.DB_NAME, // Replace with your database name
+    port: process.env.DB_PORT || 3306 // Add this line if your MySQL server uses a non-default port
 });
 
 connection.connect((err) => {
@@ -23,9 +22,6 @@ connection.connect((err) => {
     }
     console.log('Successfully connected to the database!');
 });
-
-
-
 
 // Sample route to get user data
 app.get('/user/:id', (req, res) => {
@@ -60,5 +56,5 @@ app.delete('/user/:id', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server is running:${port}`);
+    console.log(`Server is running on port ${port}`);
 });
